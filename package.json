@@ -1,0 +1,11 @@
+{
+  "name": "mcp-resume-project",
+  "private": true,
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "dev:server": "npm --workspace=@busy/mcp-server run dev",
+    "dev:web": "npm --workspace=@busy/next-playground run dev",
+    "build": "npm -w @busy/mcp-server run build && npm -w @busy/next-playground run build",
+    "start": "npm -w @busy/mcp-server start"
+  }
+}

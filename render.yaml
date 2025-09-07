@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mcp-resume-server
+    env: node
+    branch: main
+    plan: free
+    rootDir: apps/mcp-server
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: RESUME_PATH
+        value: ./data/Resume_sasni.md

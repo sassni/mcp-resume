@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  server:
+    build: ./apps/mcp-server
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - RESUME_PATH=./data/Resume_sasni.md
+      - CORS_ORIGINS=http://localhost:3000
+    volumes:
+      - ./apps/mcp-server/data:/app/data
+  web:
+    build: ./apps/next-playground
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_BASE=http://localhost:8080
+      - NEXT_PUBLIC_MCP_WS=ws://localhost:8080/mcp
