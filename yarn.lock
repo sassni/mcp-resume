@@ -458,7 +458,7 @@
     "@smithy/types" "^4.3.2"
     tslib "^2.6.2"
 
-"@busy/mcp-server@file:/Users/sasni/Downloads/mcp-resume-server-project/apps/mcp-server":
+"@busy/mcp-server@file:/Users/sasni/Projects/mcp-resume/apps/mcp-server":
   version "1.0.0"
   resolved "file:apps/mcp-server"
   dependencies:
@@ -470,7 +470,7 @@
     ws "^8.17.0"
     zod "^3.23.8"
 
-"@busy/next-playground@file:/Users/sasni/Downloads/mcp-resume-server-project/apps/next-playground":
+"@busy/next-playground@file:/Users/sasni/Projects/mcp-resume/apps/next-playground":
   version "1.0.0"
   resolved "file:apps/next-playground"
   dependencies:
