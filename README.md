@@ -5,7 +5,7 @@ This monorepo includes:
 - **Email sending** via SMTP (or NO_EMAIL=true for dry-run).
 - **Next.js playground** to chat and send emails.
 
-## Quick Start (Local)
+### Quick Start (Local)
 
 ```bash
 # 1) Install deps
@@ -16,7 +16,7 @@ cp apps/mcp-server/.env.example apps/mcp-server/.env
 cp apps/next-playground/.env.example apps/next-playground/.env
 
 # 3) Put your resume file at apps/mcp-server/data/Resume_sasni.md
-+ # This is already set in .env as the default
+# This is already set in .env as the default
 
 # 4) Run server
 npm run dev:server
@@ -25,23 +25,26 @@ npm run dev:server
 npm run dev:web
 ```
 
-Open http://localhost:3000
+#### Open http://localhost:3000
 
-## REST Endpoints
+### REST Endpoints
+```bash
 - `POST /api/chat` `{ "question": "What was my last role?" }`
 - `POST /api/email` `{ "to":"x@y.com","subject":"Hi","body":"Hello" }`
 - `GET /health`
+```
 
-## MCP WebSocket
+### MCP WebSocket
 Connect to `ws://localhost:8080/mcp` and send JSON-RPC requests:
+```bash
 - `ask_cv` with params `{ "question": "..." }`
 - `send_email` with params `{ "to":"...","subject":"...","body":"..." }`
+```
 
-## Deploy
-- **Server**: Use Render with `render.yaml` or your favorite Node host.
-- **Web**: Vercel/Netlify/Render. Set `NEXT_PUBLIC_API_BASE` to your server URL.
+### Deploy
+- **Server**: 
 
-## Gmail SMTP Setup (Direct Inbox Delivery)
+### Gmail SMTP Setup
 
 To send emails directly to Gmail inboxes, you need to:
 
@@ -70,7 +73,6 @@ To send emails directly to Gmail inboxes, you need to:
 - **Connection Verification**: Automatic verification of Gmail credentials before sending
 - **Rate Limiting**: Built-in rate limiting to prevent spam detection
 
-## Notes
+### Notes
 - The email functionality now uses Gmail SMTP by default
-- Emails are sent with HTML formatting and your website's theme colors
 - For safe testing set `NO_EMAIL=true` to log instead of sending
